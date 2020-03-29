@@ -1,0 +1,7 @@
+# -p 3000:3000 to test in local or use make start
+FROM node:10-alpine
+WORKDIR /usr/app
+COPY  package*.json ./   
+RUN npm install
+COPY . .
+CMD [ "npm", "run","start"]
