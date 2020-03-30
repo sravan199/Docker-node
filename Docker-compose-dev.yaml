@@ -1,0 +1,16 @@
+version: '3'
+services:
+    redis-server:
+        image: 'redis'
+        ports:
+            - 6379:6379
+    backend-app:
+        image : sravanreddyguduru7/node-server:v1.1
+        build: 
+            dockerfile: Dockerfile.dev
+            context: ./
+        ports: 
+            - "3000:3000"
+        volumes: 
+            - /usr/app/node_modules
+            - .:/usr/app

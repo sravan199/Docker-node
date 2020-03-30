@@ -6,6 +6,10 @@ services:
             - 6379:6379
     backend-app:
         restart: always
+        image : sravanreddyguduru7/node-server:v1.1
         build: .
         ports: 
             - "3000:3000"
+        volumes: 
+            - /usr/app/node_modules
+            - .:/usr/app
